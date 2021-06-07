@@ -1,0 +1,32 @@
+package br.edu.fatecfranca.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.fatecfranca.model.Paciente;
+import br.edu.fatecfranca.repositories.PacienteRepository;
+
+@RestController
+public class PacienteController {
+
+	// injeção de dependência - java spring
+	// executar métodos de uma classe sem instanciá-la
+	@Autowired
+	PacienteRepository injecao;
+	
+
+	// insere no banco de dados um paciente
+	// recebe o conteúdo da requisição e insere
+	public void insere(@RequestBody Paciente paciente) {
+
+	}
+
+	// consulta no banco de dados todos os pacientes
+	public List<Paciente> get() {
+		return injecao.findAll();
+
+	}
+}

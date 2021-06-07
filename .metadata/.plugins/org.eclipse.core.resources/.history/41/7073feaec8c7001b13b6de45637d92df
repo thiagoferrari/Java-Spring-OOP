@@ -1,0 +1,17 @@
+package br.edu.fatecfranca.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.fatecfranca.model.Paciente;
+
+@RestController
+public class PacienteController {
+	// insere no banco de dados
+	// recebe o conteúdo da requisição e insere
+	public void insere(@RequestBody Paciente paciente) {
+
+	}
+
+	// consulta no banco de dados todos os pacientes
+}

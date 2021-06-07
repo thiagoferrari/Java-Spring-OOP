@@ -1,0 +1,10 @@
+package br.edu.fatecfranca.repositories;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+// a interface vai herdar MongoRepository
+public interface PacienteRepository extends MongoRepository<Paciente, String> {
+
+	// herdou: save, find, remove, update
+	
+}

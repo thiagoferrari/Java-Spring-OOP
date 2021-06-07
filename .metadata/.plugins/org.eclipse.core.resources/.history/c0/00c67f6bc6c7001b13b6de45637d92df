@@ -1,0 +1,7 @@
+package br.edu.fatecfranca.model;
+
+
+// define que a classe Paciente relaciona-se com a collection paciente no Mongo
+public class Paciente {
+
+}

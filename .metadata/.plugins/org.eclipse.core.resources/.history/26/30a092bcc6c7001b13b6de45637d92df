@@ -1,0 +1,6 @@
+package br.edu.fatecfranca.repositories;
+
+// a interface vai herdar MongoRepository
+public interface PacienteRepository extends MongoRepository {
+
+}
