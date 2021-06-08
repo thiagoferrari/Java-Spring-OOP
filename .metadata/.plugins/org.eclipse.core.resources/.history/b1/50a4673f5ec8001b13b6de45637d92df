@@ -1,7 +1,6 @@
 package br.edu.fatecfranca.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,28 +30,26 @@ public class PacienteController {
 		return "Inserção realizada com sucesso";
 	}
 
-	// (GET) PEGAR/consultar no banco todos os pacientes
+	// (GET) PEGAR/consultar no banco de dados todos os pacientes
 	@GetMapping("/paciente")
 	public List<Paciente> get() {
 		return injecao.findAll();
 	}
 
-	// (GET) PEGAR/consultar no banco de dados todos os pacientes
-	// (localhost:8080/paciente/id)
 	@GetMapping("/paciente/{id}")
-	public Optional<Paciente> getById(@PathVariable String id) {
+	public Paciente getById(@PathVariable String id) {
 		return injecao.findById(id);
+		
 	}
 
-	// (DELETE) deleta do banco um paciente pelo id
-	// (localhost:8080/paciente/id)
-	@DeleteMapping("paciente/{id}") // variável {id}
+	// (DELETE) deleta do banco de dados um paciente pelo id
+	@DeleteMapping("paciente/{id}") // variável {id} que vem direto da URL (localhost:8080/paciente/id)
 	public String remove(@PathVariable String id) {
 		injecao.deleteById(id);
 		return "paciente deletado com sucesso";
 	}
 
-	// (PUT) UPDATE no banco de um paciente
+	// (PUT) UPDATE no banco de dados de um paciente
 	@PutMapping("/paciente")
 	public String atualiza(@RequestBody Paciente paciente) {
 		injecao.save(paciente); // atualiza caaso já tenha paciente com id informado

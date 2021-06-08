@@ -1,0 +1,14 @@
+package br.edu.fatecfranca.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.fatecfranca.repositories.MedicoRepository;
+
+@RestController
+public class MedicoController {
+
+	@Autowired
+	MedicoRepository injecao;
+
+}

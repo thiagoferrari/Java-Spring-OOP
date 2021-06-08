@@ -38,15 +38,13 @@ public class PacienteController {
 	}
 
 	// (GET) PEGAR/consultar no banco de dados todos os pacientes
-	// (localhost:8080/paciente/id)
 	@GetMapping("/paciente/{id}")
 	public Optional<Paciente> getById(@PathVariable String id) {
 		return injecao.findById(id);
 	}
 
 	// (DELETE) deleta do banco um paciente pelo id
-	// (localhost:8080/paciente/id)
-	@DeleteMapping("paciente/{id}") // variável {id}
+	@DeleteMapping("paciente/{id}") // variável {id} que vem direto da URL (localhost:8080/paciente/id)
 	public String remove(@PathVariable String id) {
 		injecao.deleteById(id);
 		return "paciente deletado com sucesso";
